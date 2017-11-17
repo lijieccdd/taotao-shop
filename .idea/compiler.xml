@@ -7,22 +7,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="taotao-common-service" />
-        <module name="taotao-core" />
         <module name="taotao-manager-service-api" />
         <module name="taotao-manager-service-impl" />
         <module name="taotao-manager-web" />
+        <module name="taotao-service-impl-bom" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="taotao-common-service" target="1.5" />
-      <module name="taotao-core" target="1.5" />
-      <module name="taotao-manager-service" target="1.5" />
-      <module name="taotao-manager-service-api" target="1.5" />
-      <module name="taotao-manager-service-impl" target="1.5" />
-      <module name="taotao-manager-web" target="1.5" />
-      <module name="taotao-parent" target="1.5" />
-      <module name="taotao-service" target="1.5" />
-      <module name="taotao-web" target="1.5" />
+      <module name="taotao-common-config" target="1.8" />
+      <module name="taotao-common-service" target="1.8" />
+      <module name="taotao-core" target="1.8" />
+      <module name="taotao-manager-service" target="1.8" />
+      <module name="taotao-manager-service-api" target="1.8" />
+      <module name="taotao-manager-service-impl" target="1.8" />
+      <module name="taotao-manager-web" target="1.8" />
+      <module name="taotao-parent" target="1.8" />
+      <module name="taotao-service" target="1.8" />
+      <module name="taotao-service-impl-bom" target="1.8" />
+      <module name="taotao-service-impl-parent" target="1.8" />
+      <module name="taotao-web" target="1.8" />
       <module name="taotaoservice" target="1.5" />
     </bytecodeTargetLevel>
   </component>
