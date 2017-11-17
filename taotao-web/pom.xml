@@ -12,6 +12,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>taotao-manager-web</module>
+        <module>taotao-manager-web</module>
+        <module>taotao-manager-web</module>
     </modules>
 
 
