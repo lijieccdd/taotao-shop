@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/taotao-common-config/taotao-common-config.iml" filepath="$PROJECT_DIR$/taotao-common-config/taotao-common-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-core/taotao-core.iml" filepath="$PROJECT_DIR$/taotao-core/taotao-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-web/taotao-manager-web/taotao-manager-web.iml" filepath="$PROJECT_DIR$/taotao-web/taotao-manager-web/taotao-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-parent.iml" filepath="$PROJECT_DIR$/taotao-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-service/taotao-service.iml" filepath="$PROJECT_DIR$/taotao-service/taotao-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-web/taotao-web.iml" filepath="$PROJECT_DIR$/taotao-web/taotao-web.iml" />
+    </modules>
+  </component>
+</project>
