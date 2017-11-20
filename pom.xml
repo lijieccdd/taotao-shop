@@ -16,7 +16,6 @@
         <module>taotao-common-config</module>
         <module>taotao-service</module>
         <module>taotao-web</module>
-        <module>taotao-core</module>
     </modules>
 
     <properties>
