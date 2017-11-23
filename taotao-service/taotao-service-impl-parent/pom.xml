@@ -11,35 +11,73 @@
     <artifactId>taotao-service-impl-parent</artifactId>
     <packaging>pom</packaging>
 
+
     <dependencies>
-        <!-- Spring -->
+        <!-- 项目内部依赖 -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-common-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 添加mybatis的依赖 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.github.miemiedev</groupId>
+            <artifactId>mybatis-paginator</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>-->
+        <!-- MySql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- 连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <!-- Spring boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jms</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!-- dubbo相关的jar包 -->
         <dependency>
@@ -64,14 +102,18 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
     </dependencies>
 
-    <build>
+    <!--<build>
         <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <!-- 资源根目录排除各环境的配置，使用单独的资源目录来指定 -->
+                &lt;!&ndash; 资源根目录排除各环境的配置，使用单独的资源目录来指定 &ndash;&gt;
                 <excludes>
                     <exclude>dev/*</exclude>
                     <exclude>test/*</exclude>
@@ -83,7 +125,7 @@
             </resource>
         </resources>
         <plugins>
-            <!-- jar 打包 -->
+            &lt;!&ndash; jar 打包 &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -97,7 +139,7 @@
                     <outputDirectory>target/${project.name}/lib/</outputDirectory>
                 </configuration>
             </plugin>
-            <!-- copy 依赖包 -->
+            &lt;!&ndash; copy 依赖包 &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -122,7 +164,7 @@
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.7</version>
-                <!-- 不同环境的资源文件-->
+                &lt;!&ndash; 不同环境的资源文件&ndash;&gt;
                 <executions>
                     <execution>
                         <id>copy-resources</id>
@@ -155,7 +197,7 @@
                             </resources>
                         </configuration>
                     </execution>
-                    <!-- 执行Shell 脚 本-->
+                    &lt;!&ndash; 执行Shell 脚 本&ndash;&gt;
                     <execution>
                         <id>copy-script</id>
                         <phase>package</phase>
@@ -177,9 +219,10 @@
         </plugins>
     </build>
 
+
     <profiles>
         <profile>
-            <!-- 本地开发环境 -->
+            &lt;!&ndash; 本地开发环境 &ndash;&gt;
             <id>dev</id>
             <properties>
                 <profiles.active>dev</profiles.active>
@@ -190,7 +233,7 @@
             </activation>
         </profile>
         <profile>
-            <!-- 测试环境 -->
+            &lt;!&ndash; 测试环境 &ndash;&gt;
             <id>test</id>
             <properties>
                 <profiles.active>test</profiles.active>
@@ -198,12 +241,12 @@
             </properties>
         </profile>
         <profile>
-            <!-- 生产环境 -->
+            &lt;!&ndash; 生产环境 &ndash;&gt;
             <id>product</id>
             <properties>
                 <profiles.active>product</profiles.active>
                 <deploy.url>http://host:port/manager/text</deploy.url>
             </properties>
         </profile>
-    </profiles>
+    </profiles>-->
 </project>
