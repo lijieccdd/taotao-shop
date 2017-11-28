@@ -1,25 +1,22 @@
-package com.taotao.manager.startup;
-
+package com.taotao.manager.springconfig;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
-@EnableAutoConfiguration
-@SpringBootApplication
-@ComponentScan
+@Configuration
 @MapperScan("com.taotao.manager.mapper")
-public class Application {
+@PropertySource("classpath:properties/db.properties")
+public class SpringDaoConfig {
+
     @Bean
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource dataSource() {
@@ -30,6 +27,19 @@ public class Application {
     public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.taotao.manager.pojo");
+
+        /*//分页插件
+        PageHelper pageHelper = new PageHelper();
+        Properties properties = new Properties();
+        properties.setProperty("reasonable", "true");
+        properties.setProperty("supportMethodsArguments", "true");
+        properties.setProperty("returnPageInfo", "check");
+        properties.setProperty("params", "count=countSql");
+        pageHelper.setProperties(properties);
+
+        //添加插件
+        bean.setPlugins(new Interceptor[]{pageHelper});*/
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/*.xml"));
         return sqlSessionFactoryBean.getObject();
@@ -40,7 +50,4 @@ public class Application {
         return new DataSourceTransactionManager(dataSource());
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
 }
