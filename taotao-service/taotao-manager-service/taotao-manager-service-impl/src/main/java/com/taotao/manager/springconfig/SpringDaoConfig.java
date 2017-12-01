@@ -41,7 +41,7 @@ public class SpringDaoConfig {
         //添加插件
         bean.setPlugins(new Interceptor[]{pageHelper});*/
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/mapper/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 
