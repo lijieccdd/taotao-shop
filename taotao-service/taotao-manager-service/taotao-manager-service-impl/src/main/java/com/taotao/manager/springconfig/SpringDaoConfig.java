@@ -1,5 +1,7 @@
 package com.taotao.manager.springconfig;
 
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -11,6 +13,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+
+import java.util.Properties;
 
 @Configuration
 @MapperScan("com.taotao.manager.mapper")
@@ -29,17 +33,18 @@ public class SpringDaoConfig {
         sqlSessionFactoryBean.setDataSource(dataSource());
         sqlSessionFactoryBean.setTypeAliasesPackage("com.taotao.manager.pojo");
 
-        /*//分页插件
+        //分页插件
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
         properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments", "true");
+        properties.setProperty("dialect","mysql");
+        /*properties.setProperty("supportMethodsArguments", "true");
         properties.setProperty("returnPageInfo", "check");
-        properties.setProperty("params", "count=countSql");
+        properties.setProperty("params", "count=countSql");*/
         pageHelper.setProperties(properties);
 
         //添加插件
-        bean.setPlugins(new Interceptor[]{pageHelper});*/
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper});
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/mapper/*.xml"));
         return sqlSessionFactoryBean.getObject();

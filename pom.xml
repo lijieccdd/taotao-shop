@@ -12,6 +12,7 @@
     <description>所有项目的父工程,管理jar包的版本号</description>
 
     <modules>
+        <module>pagehelper</module>
         <module>taotao-core</module>
         <module>taotao-common-config</module>
         <module>taotao-service</module>

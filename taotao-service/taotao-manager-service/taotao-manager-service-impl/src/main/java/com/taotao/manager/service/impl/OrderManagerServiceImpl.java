@@ -1,6 +1,8 @@
 package com.taotao.manager.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.taotao.manager.mapper.TbContentMapper;
 import com.taotao.manager.pojo.TbContent;
 import com.taotao.manager.pojo.TbContentExample;
@@ -16,7 +18,10 @@ public class OrderManagerServiceImpl implements OrderManagerService {
 
     @Override
     public String findOrderById() {
+        PageHelper.startPage(1,2);
         List<TbContent> tbContentList = tbContentMapper.selectByExample(new TbContentExample());
+        PageInfo<TbContent> tbContentPageInfo = new PageInfo<TbContent>(tbContentList);
+        System.out.println(tbContentPageInfo.getTotal());
         return "111";
     }
 }
