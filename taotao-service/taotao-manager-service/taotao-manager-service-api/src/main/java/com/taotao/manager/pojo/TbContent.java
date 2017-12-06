@@ -1,9 +1,11 @@
 package com.taotao.manager.pojo;
 
+import com.taotao.core.pojo.BaseModel;
+
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbContent implements Serializable{
+public class TbContent extends BaseModel{
     private Long id;
 
     private Long categoryId;

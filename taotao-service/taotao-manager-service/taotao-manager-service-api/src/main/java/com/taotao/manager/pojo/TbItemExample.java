@@ -1,10 +1,12 @@
 package com.taotao.manager.pojo;
 
+import com.taotao.core.pojo.BaseModel;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TbItemExample {
+public class TbItemExample extends BaseModel{
     protected String orderByClause;
 
     protected boolean distinct;
