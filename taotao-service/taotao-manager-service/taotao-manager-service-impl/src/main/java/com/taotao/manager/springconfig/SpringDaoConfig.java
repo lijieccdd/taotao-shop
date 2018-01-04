@@ -1,9 +1,9 @@
 package com.taotao.manager.springconfig;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -23,8 +23,8 @@ public class SpringDaoConfig {
 
     @Bean
     @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource dataSource() {
-        return new DataSource();
+    public DruidDataSource dataSource() {
+        return new DruidDataSource();
     }
 
     @Bean
