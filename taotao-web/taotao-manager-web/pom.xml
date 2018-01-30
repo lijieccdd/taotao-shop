@@ -17,11 +17,11 @@
             <artifactId>taotao-manager-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>fastdfs_client</groupId>
             <artifactId>fastdfs_client</artifactId>
             <version>1.25</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>

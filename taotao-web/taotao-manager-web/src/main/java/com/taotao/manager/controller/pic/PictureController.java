@@ -1,3 +1,4 @@
+/*
 package com.taotao.manager.controller.pic;
 
 import com.alibaba.dubbo.common.json.JSON;
@@ -13,9 +14,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * Created by lijie on 2018/1/4.
- */
+ *//*
+
 @Controller
 public class PictureController {
     @Value("${IMAGE_SERVER_URL}")
@@ -54,3 +57,4 @@ public class PictureController {
     }
 
 }
+*/

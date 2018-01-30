@@ -9,7 +9,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String login(){
-        System.out.println("1112");
         return "login";
     }
 
