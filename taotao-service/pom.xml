@@ -14,6 +14,10 @@
         <module>taotao-common-service</module>
         <module>taotao-manager-service</module>
         <module>taotao-service-impl-parent</module>
+        <module>taotao-user-service</module>
+        <module>taotao-order-service</module>
+        <module>taotao-goods-service</module>
+        <module>taotao-store-service</module>
     </modules>
 
 
