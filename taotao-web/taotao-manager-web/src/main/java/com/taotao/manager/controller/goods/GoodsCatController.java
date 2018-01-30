@@ -1,4 +1,4 @@
-package com.taotao.manager.controller.item;
+package com.taotao.manager.controller.goods;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.taotao.core.pojo.EasyUITreeNode;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("itemCat")
-public class ItemCatController {
+public class GoodsCatController {
     @Reference
     private ItemCatService itemCatService;
 
