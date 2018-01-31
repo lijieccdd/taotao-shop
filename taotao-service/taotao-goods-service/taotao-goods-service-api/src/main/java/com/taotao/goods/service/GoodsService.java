@@ -14,4 +14,16 @@ public interface GoodsService {
      * @return
      */
     PageInfo<Goods> selectGoodsPage(Goods goods);
+
+    /**
+     * 更新商品信息
+     * @param goods
+     */
+    void updateGoods(Goods goods);
+
+    /**
+     * 插入商品信息
+     * @param goods
+     */
+    void insertGoods(Goods goods);
 }

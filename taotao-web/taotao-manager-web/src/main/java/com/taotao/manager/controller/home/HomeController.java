@@ -16,4 +16,9 @@ public class HomeController {
     public String page(@PathVariable String page){
         return page;
     }
+
+    @RequestMapping("/{dir}/{page}")
+    public String dispatcheDirPage(@PathVariable String page,@PathVariable String dir){
+        return dir+"/"+page;
+    }
 }
