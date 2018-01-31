@@ -22,11 +22,11 @@ public class HttpAspect {
     private ExceptionHandle exceptionHandle;
 
     @Pointcut("execution(public * com.taotao.manager.controller..*.*(..))")
-    public void log(){
+    public void controllerMethods(){
 
     }
 
-    @Before("log()")
+    @Before("controllerMethods()")
     public void doBefore(JoinPoint joinPoint){
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -43,7 +43,7 @@ public class HttpAspect {
         LOGGER.info("args={}",joinPoint.getArgs());
     }
 
-    @Around("log()")
+    @Around("controllerMethods()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         // 定义返回对象、得到方法需要的参数
         Object obj = null;
@@ -63,7 +63,7 @@ public class HttpAspect {
     }
 
 
-    @AfterReturning(pointcut = "log()",returning = "object")//打印输出结果
+    @AfterReturning(pointcut = "controllerMethods()",returning = "object")//打印输出结果
     public void doAfterReturing(Object object){
         LOGGER.info("response={}",object.toString());
     }
