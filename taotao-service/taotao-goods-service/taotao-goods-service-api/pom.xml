@@ -11,5 +11,11 @@
 
     <artifactId>taotao-goods-service-api</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

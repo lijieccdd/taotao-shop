@@ -1,8 +1,7 @@
 package com.taotao.manager.pojo;
 
-import com.taotao.core.pojo.BaseModel;
+import com.taotao.core.pojo.common.BaseModel;
 
-import java.io.Serializable;
 import java.util.Date;
 
 public class TbContent extends BaseModel{

@@ -1,9 +1,10 @@
 package com.taotao.goods.pojo;
 
-import java.io.Serializable;
+import com.taotao.core.pojo.common.BaseModel;
+
 import java.util.Date;
 
-public class GoodsParamItem implements Serializable {
+public class GoodsParamItem extends BaseModel {
     private Long id;
 
     private Long itemId;

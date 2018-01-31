@@ -1,6 +1,6 @@
 package com.taotao.manager.service;
 
-import com.taotao.core.pojo.EasyUITreeNode;
+import com.taotao.core.pojo.common.EasyUITreeNode;
 
 import java.util.List;
 

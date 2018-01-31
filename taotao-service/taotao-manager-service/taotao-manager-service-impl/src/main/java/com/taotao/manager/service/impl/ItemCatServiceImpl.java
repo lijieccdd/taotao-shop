@@ -1,7 +1,7 @@
 package com.taotao.manager.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.taotao.core.pojo.EasyUITreeNode;
+import com.taotao.core.pojo.common.EasyUITreeNode;
 import com.taotao.manager.mapper.TbItemCatMapper;
 import com.taotao.manager.pojo.TbItemCat;
 import com.taotao.manager.pojo.TbItemCatExample;

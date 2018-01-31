@@ -2,10 +2,9 @@ package com.taotao.manager.controller.goods;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
-import com.taotao.core.pojo.EasyUIDataGridResult;
-import com.taotao.manager.pojo.TbItem;
-import com.taotao.manager.pojo.TbItemExample;
-import com.taotao.manager.service.ItemService;
+import com.taotao.core.pojo.common.EasyUIDataGridResult;
+import com.taotao.goods.pojo.Goods;
+import com.taotao.goods.service.GoodsService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/item")
 public class GoodsController {
     @Reference
-    private ItemService itemService;
+    private GoodsService goodsService;
 
     @RequestMapping("/findItemList")
-    public EasyUIDataGridResult findItemList(TbItemExample tbItemExample){
+    public EasyUIDataGridResult findItemList(Goods goods){
         EasyUIDataGridResult easyUIDataGridResult = new EasyUIDataGridResult();
-        PageInfo<TbItem> tbItemPageInfo = itemService.findItemList(tbItemExample);
+        PageInfo<Goods> tbItemPageInfo = goodsService.selectGoodsPage(goods);
         easyUIDataGridResult.setRows(tbItemPageInfo.getList());
         easyUIDataGridResult.setTotal(tbItemPageInfo.getTotal());
         return easyUIDataGridResult;
