@@ -21,7 +21,7 @@ public class GoodsServiceImpl implements GoodsService{
     GoodsMapper goodsMapper;
 
     @Override
-    public PageInfo<Goods> selectGoodsPage(Goods goods) {
+    public PageInfo<Goods> selectPageInfo(Goods goods) {
         PageHelper.startPage(goods.getPage(),goods.getRows());
         List<Goods> goodsList = goodsMapper.selectGoodsList(goods);
         PageInfo<Goods> goodsPageInfo = new PageInfo<Goods>(goodsList);
@@ -29,7 +29,20 @@ public class GoodsServiceImpl implements GoodsService{
     }
 
     @Override
-    public void updateGoods(Goods goods) {
+    public List<Goods> selectList(Goods goods) {
+        return goodsMapper.selectGoodsList(goods);
+    }
+
+    @Override
+    public void insert(Goods goods) {
+        if (goods==null){
+            throw new ServiceException(ExceptionEnum.PARAM_ERROR);
+        }
+        goodsMapper.insertSelective(goods);
+    }
+
+    @Override
+    public void update(Goods goods) {
         if (goods==null){
             throw new ServiceException(ExceptionEnum.PARAM_ERROR);
         }
@@ -37,13 +50,5 @@ public class GoodsServiceImpl implements GoodsService{
             throw new ServiceException(ExceptionEnum.PARAM_ERROR);
         }
         goodsMapper.updateByPrimaryKeySelective(goods);
-    }
-
-    @Override
-    public void insertGoods(Goods goods) {
-        if (goods==null){
-            throw new ServiceException(ExceptionEnum.PARAM_ERROR);
-        }
-        goodsMapper.insertSelective(goods);
     }
 }

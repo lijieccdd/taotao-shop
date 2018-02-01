@@ -12,7 +12,7 @@
 <script type="text/javascript">
 $(function(){
 	$("#contentCategory").tree({
-		url : '/content/category/list',
+		url : '/contentCat/selectContentCatTree',
 		animate: true,
 		method : "GET",
 		onContextMenu: function(e,node){
@@ -27,8 +27,9 @@ $(function(){
         	var _tree = $(this);
         	if(node.id == 0){
         		// 新增节点
-        		$.post("/content/category/create",{parentId:node.parentId,name:node.text},function(data){
-        			if(data.status == 200){
+        		$.post("/contentCat/insertContentCat",{parentId:node.parentId,name:node.text},function(data){
+        		    debugger;
+        			if(data.status == "000000"){
         				_tree.tree("update",{
             				target : node.target,
             				id : data.data.id
@@ -38,7 +39,7 @@ $(function(){
         			}
         		});
         	}else{
-        		$.post("/content/category/update",{id:node.id,name:node.text});
+        		$.post("/contentCat/updateContentCat",{id:node.id,name:node.text});
         	}
         }
 	});

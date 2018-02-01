@@ -3,6 +3,9 @@ package com.taotao.core.util.common;
 import com.taotao.core.enums.common.ExceptionEnum;
 import com.taotao.core.pojo.common.Result;
 
+/**
+ * web返回结果工具类
+ */
 public class ResultUtil {
 
     /**

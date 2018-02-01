@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <!-- 引入配置文件 -->
-    <properties resource="application.properties"/>
+    <properties resource="generator.properties"/>
 
     <!-- 指定数据库连接驱动jara地址 -->
     <classPathEntry

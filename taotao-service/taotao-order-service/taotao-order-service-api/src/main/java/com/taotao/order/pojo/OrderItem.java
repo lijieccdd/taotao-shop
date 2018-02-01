@@ -1,8 +1,10 @@
 package com.taotao.order.pojo;
 
+import com.taotao.core.pojo.common.BaseModel;
+
 import java.io.Serializable;
 
-public class OrderItem implements Serializable {
+public class OrderItem extends BaseModel {
     private String id;
 
     private String itemId;

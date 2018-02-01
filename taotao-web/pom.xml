@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>taotao-manager-web</module>
+        <module>taotao-portal-web</module>
     </modules>
 
     <dependencies>

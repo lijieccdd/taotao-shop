@@ -31,7 +31,7 @@ public class GoodsCatController {
         GoodsCat goodsCat = new GoodsCat();
         goodsCat.setParentId(parentId);
 
-        List<GoodsCat> goodsCatList = goodsCatService.selectGoodsCatListByModel(goodsCat);
+        List<GoodsCat> goodsCatList = goodsCatService.selectList(goodsCat);
         List<EasyUITreeNode> easyUITreeNodeList = new ArrayList<>();
 
         if(!CollectionUtils.isEmpty(goodsCatList)){

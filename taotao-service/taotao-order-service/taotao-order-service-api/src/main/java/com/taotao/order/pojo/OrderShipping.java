@@ -1,9 +1,11 @@
 package com.taotao.order.pojo;
 
+import com.taotao.core.pojo.common.BaseModel;
+
 import java.io.Serializable;
 import java.util.Date;
 
-public class OrderShipping implements Serializable {
+public class OrderShipping extends BaseModel {
     private String orderId;
 
     private String receiverName;

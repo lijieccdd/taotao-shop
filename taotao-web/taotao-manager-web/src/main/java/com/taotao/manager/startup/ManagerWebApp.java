@@ -6,6 +6,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * @SpringBootApplication 等同于 @Configuration @EnableAutoConfiguration @ComponentScan的集合
+ *
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.taotao.manager"})
 public class ManagerWebApp extends SpringBootServletInitializer{
@@ -15,6 +19,10 @@ public class ManagerWebApp extends SpringBootServletInitializer{
         return builder.sources(ManagerWebApp.class);
     }
 
+    /**
+     * web项目 直接运行main好像访问不了 需要通过maven spring-boot:run才能访问
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(ManagerWebApp.class,args);
     }

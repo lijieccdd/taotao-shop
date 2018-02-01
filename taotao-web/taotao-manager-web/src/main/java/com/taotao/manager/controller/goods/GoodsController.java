@@ -10,6 +10,9 @@ import com.taotao.goods.service.GoodsService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 商品管理控制层
+ */
 @RestController
 @RequestMapping("/goods")
 public class GoodsController {
@@ -24,7 +27,7 @@ public class GoodsController {
     @RequestMapping("/selectGoodsList")
     public EasyUIDataGridResult selectGoodsList(Goods goods){
         EasyUIDataGridResult easyUIDataGridResult = new EasyUIDataGridResult();
-        PageInfo<Goods> tbItemPageInfo = goodsService.selectGoodsPage(goods);
+        PageInfo<Goods> tbItemPageInfo = goodsService.selectPageInfo(goods);
         easyUIDataGridResult.setRows(tbItemPageInfo.getList());
         easyUIDataGridResult.setTotal(tbItemPageInfo.getTotal());
         return easyUIDataGridResult;
@@ -37,7 +40,7 @@ public class GoodsController {
      */
     @RequestMapping("/updateGoods")
     public Result updateGoods(Goods goods){
-        goodsService.updateGoods(goods);
+        goodsService.update(goods);
         return ResultUtil.success();
     }
 
@@ -48,7 +51,7 @@ public class GoodsController {
      */
     @RequestMapping("/insertGoods")
     public Result insertGoods(Goods goods){
-        goodsService.insertGoods(goods);
+        goodsService.insert(goods);
         return ResultUtil.success();
     }
 }
