@@ -59,7 +59,7 @@ public class ContentCatController {
         return ResultUtil.success();
     }
 
-    @RequestMapping("/updateContentCat")
+    @RequestMapping("/deleteContentCat")
     public Result deleteContentCat(Long id){
         contentCatService.delete(id);
         return ResultUtil.success();

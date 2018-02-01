@@ -4,13 +4,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>淘淘商城后台管理系统</title>
-<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/default/easyui.css" />
-<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.4.1/themes/icon.css" />
-<link rel="stylesheet" type="text/css" href="/css/common/taotao.css" />
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="/js/common/common.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/jquery-easyui-1.4.1/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="/js/jquery-easyui-1.4.1/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="/css/taotao.css" />
+<script type="text/javascript" src="/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
 <style type="text/css">
 	.content {
 		padding: 10px 10px 10px 10px;
@@ -23,16 +23,16 @@
          	<li>
          		<span>商品管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'goods/goods-add'}">新增商品</li>
-	         		<li data-options="attributes:{'url':'goods/goods-list'}">查询商品</li>
-	         		<li data-options="attributes:{'url':'goods/goods-param-list'}">规格参数</li>
+	         		<li data-options="attributes:{'url':'/page/goods/goods-add'}">新增商品</li>
+	         		<li data-options="attributes:{'url':'/page/goods/goods-list'}">查询商品</li>
+	         		<li data-options="attributes:{'url':'/page/goods/goods-param-list'}">规格参数</li>
 	         	</ul>
          	</li>
          	<li>
          		<span>网站内容管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'content/content-category'}">内容分类管理</li>
-	         		<li data-options="attributes:{'url':'content/content'}">内容管理</li>
+	         		<li data-options="attributes:{'url':'/page/content/content-category'}">内容分类管理</li>
+	         		<li data-options="attributes:{'url':'/page/content/content'}">内容管理</li>
 	         	</ul>
          	</li>
          </ul>

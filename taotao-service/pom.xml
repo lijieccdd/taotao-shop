@@ -19,6 +19,7 @@
         <module>taotao-goods-service</module>
         <module>taotao-store-service</module>
         <module>taotao-content-service</module>
+        <module>taotao-search-service</module>
     </modules>
 
 

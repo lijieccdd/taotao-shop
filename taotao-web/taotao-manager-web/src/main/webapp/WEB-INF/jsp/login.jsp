@@ -40,7 +40,7 @@
     			$.messager.alert('错误',"用户名密码不正确！");
     			return ;
     		}
-    		window.location.href="/index";
+    		window.location.href="/page/index";
     	});
     </script>
 </body>

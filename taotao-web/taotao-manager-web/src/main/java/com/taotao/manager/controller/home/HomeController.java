@@ -12,12 +12,12 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping("/{page}")
+    @RequestMapping("page/{page}")
     public String page(@PathVariable String page){
         return page;
     }
 
-    @RequestMapping("/{dir}/{page}")
+    @RequestMapping("page/{dir}/{page}")
     public String dispatcheDirPage(@PathVariable String page,@PathVariable String dir){
         return dir+"/"+page;
     }
