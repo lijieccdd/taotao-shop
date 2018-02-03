@@ -1,5 +1,7 @@
 package com.taotao.manager.startup;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.taotao.manager"})
 public class ManagerWebApp extends SpringBootServletInitializer{
+    private static final Logger LOGGER = LoggerFactory.getLogger(ManagerWebApp.class);
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -25,5 +28,6 @@ public class ManagerWebApp extends SpringBootServletInitializer{
      */
     public static void main(String[] args) {
         SpringApplication.run(ManagerWebApp.class,args);
+        LOGGER.info("classpath:"+System.getProperty("java.class.path"));
     }
 }

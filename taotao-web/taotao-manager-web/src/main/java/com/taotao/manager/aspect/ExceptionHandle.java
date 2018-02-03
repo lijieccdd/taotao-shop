@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class ExceptionHandle {
 
-  private final static Logger LOGGER = LoggerFactory.getLogger(ExceptionHandle.class);
+  private static final  Logger LOGGER = LoggerFactory.getLogger(ExceptionHandle.class);
 
   /**
    * 判断错误是否是已定义的已知错误，不是则由未知错误代替，同时记录在log中
