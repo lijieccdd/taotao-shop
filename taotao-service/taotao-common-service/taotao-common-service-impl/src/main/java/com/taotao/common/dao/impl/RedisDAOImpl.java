@@ -1,3 +1,4 @@
+/*
 package com.taotao.common.dao.impl;
 
 
@@ -23,4 +24,4 @@ public class RedisDAOImpl implements RedisDAO {
         return jedisCluster.get(key);
     }
 
-}
+}*/
