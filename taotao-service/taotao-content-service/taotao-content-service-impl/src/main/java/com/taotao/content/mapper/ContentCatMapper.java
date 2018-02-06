@@ -9,7 +9,7 @@ public interface ContentCatMapper {
 
     int insert(ContentCat record);
 
-    int insertSelective(ContentCat record);
+    void insertSelective(ContentCat record);
 
     ContentCat selectByPrimaryKey(Long id);
     List<ContentCat> selectList(ContentCat contentCat);

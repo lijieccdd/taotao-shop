@@ -1,6 +1,7 @@
 package com.taotao.content.service;
 
 import com.taotao.content.pojo.ContentCat;
+import com.taotao.core.exception.common.ServiceException;
 import com.taotao.core.service.BaseService;
 
 /**
@@ -10,5 +11,6 @@ import com.taotao.core.service.BaseService;
  * @Modified by :
  */
 public interface ContentCatService extends BaseService<ContentCat>{
-    void delete(Long id);
+    Long insertWithReturn(ContentCat contentCat);
+    void delete(ContentCat contentCat) throws ServiceException;
 }

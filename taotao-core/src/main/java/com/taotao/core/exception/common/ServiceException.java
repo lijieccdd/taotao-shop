@@ -2,14 +2,19 @@ package com.taotao.core.exception.common;
 
 import com.taotao.core.enums.common.ExceptionEnum;
 
+import java.io.Serializable;
+
 /**
  * @Author : lijie
  * @Description :服务层异常类
  * @Date : Create in 2018/1/31 11:15
  * @Modified by :
  */
-public class ServiceException extends  RuntimeException{
+public class ServiceException  extends  RuntimeException implements Serializable{
     private String code;
+
+    public ServiceException() {
+    }
 
     public ServiceException(ExceptionEnum exceptionEnum) {
         super(exceptionEnum.getMsg());

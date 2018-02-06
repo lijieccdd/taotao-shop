@@ -49,8 +49,8 @@ public class ContentCatController {
 
     @RequestMapping("/insertContentCat")
     public Result insertContentCat(ContentCat contentCat){
-        contentCatService.insert(contentCat);
-        return ResultUtil.success();
+        Long id = contentCatService.insertWithReturn(contentCat);
+        return ResultUtil.success(id);
     }
 
     @RequestMapping("/updateContentCat")
@@ -60,8 +60,8 @@ public class ContentCatController {
     }
 
     @RequestMapping("/deleteContentCat")
-    public Result deleteContentCat(Long id){
-        contentCatService.delete(id);
+    public Result deleteContentCat(ContentCat contentCat){
+        contentCatService.delete(contentCat);
         return ResultUtil.success();
     }
 }

@@ -1,3 +1,4 @@
+/*
 package com.taotao.manager.aspect;
 
 import com.taotao.core.enums.common.ExceptionEnum;
@@ -15,11 +16,13 @@ public class ExceptionHandle {
 
   private static final  Logger LOGGER = LoggerFactory.getLogger(ExceptionHandle.class);
 
-  /**
+  */
+/**
    * 判断错误是否是已定义的已知错误，不是则由未知错误代替，同时记录在log中
    * @param e
    * @return
-   */
+   *//*
+
   @ExceptionHandler(value = Exception.class)
   @ResponseBody
   public Result exceptionGet(Exception e){
@@ -31,4 +34,4 @@ public class ExceptionHandle {
       LOGGER.error("【系统异常】{}",e);
       return ResultUtil.error(ExceptionEnum.UNKNOW_ERROR);
   }
-}
+}*/

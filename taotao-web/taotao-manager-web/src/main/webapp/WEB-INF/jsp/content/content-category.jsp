@@ -32,7 +32,7 @@ $(function(){
         			if(data.status == "000000"){
         				_tree.tree("update",{
             				target : node.target,
-            				id : data.data.id
+            				id : data.data
             			});
         			}else{
         				$.messager.alert('提示','创建'+node.text+' 分类失败!');
@@ -63,9 +63,15 @@ function menuHandler(item){
 	}else if(item.name === "delete"){
 		$.messager.confirm('确认','确定删除名为 '+node.text+' 的分类吗？',function(r){
 			if(r){
-				$.post("/contentCat/deleteContentCat",{parentId:node.parentId,id:node.id},function(){
-					tree.tree("remove",node.target);
-				});	
+				$.post("/contentCat/deleteContentCat",{parentId:node.parentId,id:node.id,isParent:node.isParent},
+                    function(data){
+				    debugger;
+                    if(data.status == "000000"){
+                        tree.tree("remove",node.target);
+                    }else {
+                        $.messager.alert('提示',data.msg);
+                    }
+				});
 			}
 		});
 	}

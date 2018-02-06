@@ -47,7 +47,10 @@
       #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, #{isParent,jdbcType=BIT}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.taotao.content.pojo.ContentCat">
+  <insert id="insertSelective" parameterType="com.taotao.content.pojo.ContentCat" keyProperty="id" useGeneratedKeys="true">
+    <!--<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+      SELECT LAST_INSERT_ID()
+    </selectKey>-->
     insert into tb_content_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
