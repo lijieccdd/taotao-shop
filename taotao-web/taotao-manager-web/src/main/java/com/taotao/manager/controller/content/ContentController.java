@@ -20,7 +20,7 @@ public class ContentController {
     @Reference
     ContentService contentService;
 
-    @RequestMapping("/selectContentPage")
+    @RequestMapping("/list")
     public EasyUIDataGridResult selectContentPage(Content content){
         EasyUIDataGridResult easyUIDataGridResult = new EasyUIDataGridResult();
         PageInfo<Content> contentPageInfo = contentService.selectPageInfo(content);

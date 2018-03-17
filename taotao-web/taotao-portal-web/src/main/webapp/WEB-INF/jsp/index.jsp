@@ -30,6 +30,8 @@
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
+
+<!-- 图片轮播-->
 <div class="w">
 <div id="o-slide">
 <div class="slide" id="slide">

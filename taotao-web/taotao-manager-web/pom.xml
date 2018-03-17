@@ -9,7 +9,9 @@
     <artifactId>taotao-manager-web</artifactId>
     <packaging>jar</packaging>
     <name>taotao-manager-web Maven Webapp</name>
+    <description>后台管理-web</description>
     <url>http://maven.apache.org</url>
+
     <dependencies>
         <!-- 项目内部依赖 -->
         <dependency>

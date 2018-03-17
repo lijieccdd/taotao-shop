@@ -13,6 +13,7 @@
     <modules>
         <module>taotao-manager-web</module>
         <module>taotao-portal-web</module>
+        <module>taotao-search-web</module>
     </modules>
 
     <dependencies>

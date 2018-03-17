@@ -26,7 +26,7 @@ public class ContentCatController {
     @Reference
     ContentCatService contentCatService;
 
-    @RequestMapping("/selectContentCatTree")
+    @RequestMapping("/list")
     public List<EasyUITreeNode> selectContentCatTree(@RequestParam(name = "id",defaultValue = "0")long parentId){
         ContentCat contentCat = new ContentCat();
         contentCat.setParentId(parentId);

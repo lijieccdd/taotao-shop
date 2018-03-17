@@ -41,6 +41,9 @@
       <if test="id!=null">
         AND id=#{id}
       </if>
+      <if test="categoryId!=null">
+        AND category_id=#{categoryId}
+      </if>
     </where>
   </select>
 
