@@ -61,7 +61,7 @@
         <!-- 列出要生成代码的所有表，这里配置的是不生成Example文件 -->
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
                    是否生成 example类   -->
-        <table tableName="m_center_requestpath_cfg" domainObjectName="RequestPathCfg"
+        <table tableName="m_match_game_type" domainObjectName="MMatchGameType"
                schema="club_match"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
@@ -71,7 +71,9 @@
             <!-- 指定列的java数据类型
             <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />  -->
             <!-- 用于指定生成实体类时是否使用实际的列名作为实体类的属性名。false是 Camel Case风格-->
-            <property name="useActualColumnNames" value="false" />
+            <property name="useActualColumnNames" value="true" />
         </table>
+
+
     </context>
 </generatorConfiguration>
